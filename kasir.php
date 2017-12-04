@@ -108,44 +108,7 @@ clearInterval(interval);}
 
 		<th></th>
 		</tr>
-		<?php
-			$select = "SELECT id_barang,sub_total,nama_barang,harga_barang,jumlah_barang FROM temp";
-			$select_query = mysql_query($select);
-
-
-			while($select_result = mysql_fetch_array($select_query))
-			{
-			?>
-				<tr>
-					<td><?php echo $select_result['nama_barang'] ?></td>
-					<td><?php echo $select_result['jumlah_barang'] ?></td>
-					<td><?php echo $select_result['harga_barang'] ?></td>
-					<td><?php echo $select_result['subtotal'] ?></td>
-					<td><center><a href="delete_barang.php?kode=<?php echo $var['id_barang'] ?>">Delete</a></td>
-				</tr>
-			<?php}?>
-	</table>
-<?php
-
-	$select1 = "SELECT SUM(jumlah_barang) AS alljumlah,SUM(sub_total) AS total FROM temp";
-	$select_query1 = mysql_query($select1);
-	while($select_result = mysql_fetch_array($select_query1))
-	{
-		$alljumlah	 			= $select_result['alljumlah'] ;
-		$total	 				= $select_result['total'] ;
-	?>
-		<table id='tfhover'  class='tftable' border='1' align='center'> <col width='250'><col width='100'><col width='100'><col width='100'><col width='50'>
-		<tr>
-
-		<th style='text-align:center;'><br/></th>
-		<th style='text-align:center;'></th>
-		<th style='text-align:center;'><?php$alljumlah?></th>
-		<th style='text-align:right;'><?php$total?></th>
-		<th><a href='deletetemp.php'><img src='bin.png'></img></a></th>
-		</tr>
-		</table>
-	<?php}?>
-
+		
 
 
 Pembayaran
