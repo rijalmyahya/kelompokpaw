@@ -66,6 +66,7 @@
 					$tampil = "SELECT * FROM login WHERE no_log='$id'";
 					$query = mysql_query($tampil);
 					$data = mysql_fetch_array($query);
+					$no = $data['no_log'];
 					$tanggal = $data['tanggal']; 
 					$id = $data['Id_user'];
 					$nama = $data['nama_user'];
@@ -73,6 +74,7 @@
 					<div class="kotaklogb">
 						<table border="0">
 							<form action="proses_edit_history_login.php" method="post">
+							<input type="hidden" name="no" value="<?php echo $no; ?>" size="20">
 							<tr>
 								<td align="left" align="center">Tanggal</td>
 								<td align="right">
