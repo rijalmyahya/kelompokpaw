@@ -1,7 +1,9 @@
 <html>
 <head>
 <?php
+	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -53,7 +55,7 @@
 		<div class="con">
 			<div class="login">
 					<div class="kotakloga">
-						<b>Tambah</b> 
+						<b>Tambah Catatan Keluar</b> 
 					</div>
 					<div class="kotaklogb">
 						<table border="0">
@@ -61,31 +63,45 @@
 							<tr>
 								<td align="left" align="center">Tanggal Keluar</td>
 								<td align="right">
-									<input type="date" name="tanggal" placeholder="k124" size="20">
+									<input type="date" name="tanggal" placeholder="k124" size="20">	
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">ID Barang</td>
 								<td align="right">
-									<input type="text" name="id" placeholder="k124" size="20">
+									<?php
+									$brg=mysql_query("select * from barang");
+									$jsArray = "var prdName = new Array();";
+									?>
+									<select name="id" onchange="changeValue(this.value)">';
+									<option>Pilih Nama Barang...</option>';  
+									<?php
+									while($row=mysql_fetch_array($brg)){
+										echo '<option value="' . $row['id_barang'] . '">' . $row['id_barang'] . '</option>';
+    									$jsArray .= "prdName['" . $row['id_barang'] . "'] = {nama:'" . addslashes($row['nama_barang']) . "',harga:'".addslashes($row['harga_barang'])."'};\n";
+    								?>
+    								<?php
+									}
+									?>
+									</select>
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Nama Barang</td>
 								<td align="right">
-									<input type="text" name="nama" placeholder="karung" size="20">
+									<input type="text" name="nama" id="prd_nama" size="20"/>
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Jumlah Barang</td>
 								<td align="right">
-									<input type="text" name="jumlah" placeholder="1500" size="20">
+									<input type="text" name="jumlah" placeholder="Jumlah Barang" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Harga Barang</td>
 								<td align="right">
-									<input type="text" name="harga" placeholder="5000" size="20">
+									<input type="text" name="harga" id="prd_harga" size="20"/>
 								</td>
 							</tr>
 							<tr>
@@ -111,3 +127,10 @@
 </body>
 </head>
 </html>	
+<script type="text/javascript">
+	<?php echo $jsArray; ?>
+	function changeValue(id){
+		document.getElementById('prd_nama').value = prdName[id].nama;
+		document.getElementById('prd_harga').value = prdName[id].harga;
+	};
+</script>

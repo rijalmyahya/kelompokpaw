@@ -3,6 +3,7 @@
 <?php
 	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 	include 'fungsi_fungsi.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
@@ -14,7 +15,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1 class="title">Sistem Pengelolaan Super Market</h1>
@@ -42,7 +43,13 @@
 
 		<!-- menu -->
 		<div class="contain">
+			<form action="cari_barang.php" method="get"> 
+				<h4>Cari Barang
+					<input type="text" placeholder="Nama Barang" name="namabarang">
+			 	</h4>
+			</form>
 			<a href="tambah_barang.php">Tambah Barang</a>
+			<a href="laporan_barang.php">Cetak Data</a>
 			<br/>
 			<br/>
 			<table>

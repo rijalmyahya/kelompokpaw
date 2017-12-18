@@ -1,7 +1,9 @@
 <html>
 <head>
 <?php
+	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -60,9 +62,8 @@
 					</div>
 					<?php
 					$id = $_GET['kode'];
-					$tanggal = $_GET['kode2'];
 					
-					$tampil = "SELECT * FROM barangkeluar WHERE id_barang='$id'";
+					$tampil = "SELECT * FROM barangkeluar WHERE no_barang_keluar='$id'";
 					$query = mysql_query($tampil);
 					$data = mysql_fetch_array($query);
 					$tanggal = $data['tanggal_keluar'];
@@ -96,13 +97,13 @@
 							<tr>
 								<td align="left" align="center">Harga Barang</td>
 								<td align="right">
-									<input type="text" name="jumlah" placeholder="1500" value="<?php echo $harga;?>" size="20">
+									<input type="text" name="harga" placeholder="1500" value="<?php echo $harga;?>" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Jumlah Barang</td>
 								<td align="right">
-									<input type="text" name="harga" placeholder="5000" value="<?php echo $jumlah;?>" size="20">
+									<input type="text" name="jumlah" placeholder="5000" value="<?php echo $jumlah;?>" size="20">
 								</td>
 							</tr>
 							<tr>

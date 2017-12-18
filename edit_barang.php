@@ -12,7 +12,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -87,13 +87,13 @@
 							<tr>
 								<td align="left" align="center">Jumlah Barang</td>
 								<td align="right">
-									<input type="text" name="jumlah" placeholder="1500" value="<?php echo $harga;?>" size="20">
+									<input type="text" name="jumlah" placeholder="1500" value="<?php echo $jumlah;?>" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Harga Barang</td>
 								<td align="right">
-									<input type="text" name="harga" placeholder="5000" value="<?php echo $jumlah;?>" size="20">
+									<input type="text" name="harga" placeholder="5000" value="<?php echo $harga;?>" size="20">
 								</td>
 							</tr>
 							<tr>

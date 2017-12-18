@@ -12,7 +12,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>

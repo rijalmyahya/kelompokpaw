@@ -1,7 +1,9 @@
 <html>
 <head>
 <?php
+	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -66,6 +68,7 @@
 					$data = mysql_fetch_array($query);
 					$id = $data['id_kasir'];
 					$pass = $data['pass_kasir'];
+					$nama = $data['nama_kasir'];
 					?>
 					<div class="kotaklogb">
 						<table border="0">
@@ -73,13 +76,19 @@
 							<tr>
 								<td align="left" align="center">ID kasir</td>
 								<td align="right">
-									<input type="text" name="id" placeholder="k124" value="<?php echo $id; ?>" size="20">
+									<input type="text" name="id" placeholder="id" value="<?php echo $id; ?>" size="20">
+								</td>
+							</tr>
+							<tr>
+								<td align="left" align="center">Nama kasir</td>
+								<td align="right">
+									<input type="text" name="nama" placeholder="nama" value="<?php echo $nama;?>" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Pass kasir</td>
 								<td align="right">
-									<input type="text" name="pass" placeholder="karung" value="<?php echo $pass;?>" size="20">
+									<input type="password" name="pass" placeholder="password" value="<?php echo $pass;?>" size="20">
 								</td>
 							</tr>
 							<tr>

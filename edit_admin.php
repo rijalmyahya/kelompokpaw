@@ -12,7 +12,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -66,6 +66,7 @@
 					$data = mysql_fetch_array($query);
 					$id = $data['id_admin'];
 					$pass = $data['pass_admin'];
+					$nama = $data['nama_admin'];
 					?>
 					<div class="kotaklogb">
 						<table border="0">
@@ -73,13 +74,19 @@
 							<tr>
 								<td align="left" align="center">ID Admin</td>
 								<td align="right">
-									<input type="text" name="id" placeholder="k124" value="<?php echo $id; ?>" size="20">
+									<input type="text" name="id" placeholder="id" value="<?php echo $id; ?>" size="20">
+								</td>
+							</tr>
+							<tr>
+								<td align="left" align="center">Nama Admin</td>
+								<td align="right">
+									<input type="text" name="pass" placeholder="nama" value="<?php echo $nama;?>" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Pass Admin</td>
 								<td align="right">
-									<input type="text" name="pass" placeholder="karung" value="<?php echo $pass;?>" size="20">
+									<input type="password" name="pass" placeholder="password" value="<?php echo $pass;?>" size="20">
 								</td>
 							</tr>
 							<tr>

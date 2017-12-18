@@ -18,7 +18,7 @@ $total = $jumlah*$harga;
 	else{
 		mysql_query("insert into barangmasuk(tanggal_masuk,id_barang,nama_barang,jumlah_barang,harga_barang,total_harga)
 		values('$tanggal','$id','$nama','$jumlah','$harga','$total')") or die(mysql_error());
-		mysql_query("update barang set jumlah_barang='$sisa' where nama_barang='$nama'");
+		mysql_query("update barang set jumlah_barang='$sisa' where id_barang='$id'");
 		header('location:masuk_gudang_barang.php');
 	}
 ?>

@@ -78,6 +78,38 @@ header nav ul li a:hover{
 	padding: 10px;
 }
 
+.contain form h4 input[type="text"]{
+	width: 12em;
+    padding: 0.5em;
+    color: #888;
+}
+
+.contain form select option{
+	width: 12em;
+    padding: 0.5em;
+    color: #888;	
+}
+
+.contain form input[type="text"]{
+	width: 12em;
+    padding: 0.5em;
+    color: #888;
+}
+
+.contain form input[type="submit"]{
+	border-radius: 15%;
+	background-color: #008080;
+    color: white;
+    padding: 7px 30px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+
+.contain form input[type="submit"]:hover{
+	background-color: #9ACD32;
+}
+
 .contain a {
 	margin-left: 25px; 
 	border-radius: 25%;
@@ -114,14 +146,53 @@ header nav ul li a:hover{
 	background-color:#F0F0F0;
 }
 
+.con .login1{
+	-webkit-box-shadow: 5px 5px 8px #D0D0D0;
+	width: 500px;	
+	margin-left: 280px;
+}
+
+.con .login1 .kotakloga1{
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.con .login1 .kotaklogb1{
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+
+.con .login1 .kotaklogb1 a{
+	border-radius: 15%;
+	background-color: #008080;
+    color: white;
+    padding: 7px 30px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+
+.con .login1 .kotaklogb1 a:hover{
+	background-color: #9ACD32;
+}
+
 .con .login table{
 	text-align:center;
 }
 
 .con .login table tr td, table tr th {padding:0.625em;}
 
-.con .login table input[type="text"],input[type="password"],input[type="date"],input[type="datetime-local"]{
+.con .login table input[type="text"],input[type="password"],input[type="date"],input[type="datetime-local"],option{
     width: 12em;
+    padding: 0.5em;
+    color: #888;
+}
+
+.con .login table option{
+    width: 9.6em;
     padding: 0.5em;
     color: #888;
 }
@@ -136,7 +207,29 @@ header nav ul li a:hover{
     display: inline-block;
 }
 
-.con .login table input[type="submit"]:hover{
+.con .login1 table input[type="submit"]:hover{
+	background-color: #9ACD32;
+}
+
+.con .login1 table tr td, table tr th {padding:0.625em;}
+
+.con .login1 table input[type="text"],input[type="password"],input[type="date"],input[type="datetime-local"]{
+    width: 12em;
+    padding: 0.5em;
+    color: #888;
+}
+
+.con .login1 table input[type="submit"]{
+	border-radius: 15%;
+	background-color: #008080;
+    color: white;
+    padding: 7px 30px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+
+.con .login1 table input[type="submit"]:hover{
 	background-color: #9ACD32;
 }
 

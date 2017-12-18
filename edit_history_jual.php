@@ -12,7 +12,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -59,49 +59,64 @@
 						<b>Edit History</b> 
 					</div>
 					<?php
-					$id = $_GET['kode2'];
-					$tanggal = $_GET['kode'];
+					$id = $_GET['kode'];
 					
-					$tampil = "SELECT * FROM logjual WHERE id_kasir='$id' and tanggal='$tanggal'";
+					$tampil = "SELECT * FROM logjual WHERE no_logjual = $id";
 					$query = mysql_query($tampil);
 					$data = mysql_fetch_array($query);
-					$tanggal = $data['tanggal']; 
-					$id = $data['id_kasir'];
-					$nama = $data['nama_kasir'];
-					$barang = $data['barang_terjual'];
-					$total = $data['total_penjualan'];
+					$no = $data['no_logjual'];
+					$id = $data['id_barang']; 
+					$nama = $data['nama_barang'];
+					$harga = $data['harga_barang'];
+					$jumlah = $data['jumlah_barang'];
+					$total = $data['total_harga'];
+					$kasir = $data['id_kasir'];
+					$tanggal = $data['tanggal'];
 					?>
 					<div class="kotaklogb">
 						<table border="0">
 							<form action="proses_edit_history_jual.php" method="post">
+							<input type="hidden" name="no" placeholder="ID" value="<?php echo $no; ?>" size="20">
 							<tr>
-								<td align="left" align="center">Tanggal</td>
+								<td align="left" align="center">Id Barang</td>
 								<td align="right">
-									<input type="date" name="tanggal" placeholder="k124" value="<?php echo $tanggal; ?>" size="20">
+									<input type="text" name="id" placeholder="ID" value="<?php echo $id; ?>" size="20">
 								</td>
 							</tr>
 							<tr>
-								<td align="left" align="center">ID kasir</td>
+								<td align="left" align="center">Nama Barang</td>
 								<td align="right">
-									<input type="text" name="id" placeholder="k124" value="<?php echo $id; ?>" size="20">
+									<input type="text" name="nama" placeholder="nama" value="<?php echo $nama; ?>" size="20">
 								</td>
 							</tr>
 							<tr>
-								<td align="left" align="center">Nama kasir</td>
+								<td align="left" align="center">Harga Barang</td>
 								<td align="right">
-									<input type="text" name="nama" placeholder="karung" value="<?php echo $nama;?>" size="20">
+									<input type="text" name="harga" placeholder="Harga" value="<?php echo $harga;?>" size="20">
 								</td>
 							</tr>
 							<tr>
-								<td align="left" align="center">Barang terjual</td>
+								<td align="left" align="center">Jumlah Barang</td>
 								<td align="right">
-									<input type="text" name="barang" placeholder="karung" value="<?php echo $barang;?>" size="20">
+									<input type="text" name="jumlah" placeholder="Jumlah" value="<?php echo $jumlah;?>" size="20">
 								</td>
 							</tr>
 							<tr>
-								<td align="left" align="center">Total Penjualan</td>
+								<td align="left" align="center">Total Harga</td>
 								<td align="right">
-									<input type="text" name="total" placeholder="karung" value="<?php echo $total;?>" size="20">
+									<input type="text" name="total" placeholder="total" value="<?php echo $total;?>" size="20">
+								</td>
+							</tr>
+							<tr>
+								<td align="left" align="center">Id Kasir</td>
+								<td align="right">
+									<input type="text" name="kasir" placeholder="kasir" value="<?php echo $kasir;?>" size="20">
+								</td>
+							</tr>
+							<tr>
+								<td align="left" align="center">tanggal</td>
+								<td align="right">
+									<input type="datetime-local" name="total" placeholder="date-time" value="<?php echo $tanggal;?>" size="20">
 								</td>
 							</tr>
 							<tr>

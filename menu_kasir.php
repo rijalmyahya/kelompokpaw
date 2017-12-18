@@ -3,6 +3,7 @@
 <?php
 	session_start();
 	include 'koneksi.php';
+	include 'cek_kasir.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1 class="title">Sistem Pengelolaan Super Market</h1>
@@ -39,13 +40,14 @@
 
 		<!-- menu -->
 		<div class="contain">
-			<a href="kasir.php">Kasir</a>
+			<a href="kasir1.php">Kasir</a>
 			<a href="info_kasir.php">User</a>
 		</div>
 		<!-- menu -->
 
 		<!-- footbar -->
 		<footer>
+			<hr>
 			<p class="kaki">by kelompok</p>
 		</footer>
 		<!-- end footbar -->

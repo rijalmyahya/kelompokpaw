@@ -1,7 +1,9 @@
 <html>
 <head>
 <?php
+	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -23,6 +25,7 @@
 					<li><a href="info_admin.php">Kembali</a></li>
 					<li>|</li>
 					<li><a href="logout.php">Logout</a></li>
+					<li>|</li>
 					<li>
 						<?php 
 						include 'koneksi.php';
@@ -61,6 +64,7 @@
 					<div class="kotakloga">
 						<b>Ganti Password</b> 
 					</div>
+					<!--
 					<?php
 					/*$id = $_GET['kode'];
 					
@@ -69,32 +73,32 @@
 					$data = mysql_fetch_array($query);
 					$id = $data['id_admin'];
 					$pass = $data['nama_admin'];
-					*/?>
+					*/?>-->
 					<div class="kotaklogb">
 						<table border="0">
 							<form action="proses_ganti_password_admin.php" method="post">
-							<input name="id" type="hidden" value="<?php echo $id; ?>">
+							<input name="user" type="hidden" value="<?php echo $_SESSION['id_admin']; ?>">
 							<tr>
 								<td align="left" align="center">Password lama</td>
 								<td align="right">
-									<input type="password" name="lama" placeholder="k124" value="<?php echo $id; ?>" size="20">
+									<input type="password" name="lama" placeholder="password lama" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">Password baru</td>
 								<td align="right">
-									<input type="password" name="baru" placeholder="karung" value="<?php echo $nama;?>" size="20">
+									<input type="password" name="baru" placeholder="password baru" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">ulangi password</td>
 								<td align="right">
-									<input type="password" name="ulang" placeholder="1500" value="<?php echo $harga;?>" size="20">
+									<input type="password" name="ulang" placeholder="password baru" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2" align="right">
-									<input type="submit" value="Edit">
+									<input type="submit" value="Ganti">
 								</td>
 							</tr>
 							</form>

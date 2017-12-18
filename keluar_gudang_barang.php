@@ -3,6 +3,7 @@
 <?php
 	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1 class="title">Sistem Pengelolaan Super Market</h1>
@@ -41,13 +42,36 @@
 
 		<!-- menu -->
 		<div class="contain">
+			<form action="cari_barang_keluar.php" method="get"> 
+				<h4>Cari Barang
+					<input type="text" placeholder="Nama Barang" name="namabarang">
+			 	</h4>
+			</form>
+			<form action="laporan_barang_keluar.php" method="get"> 
+				<select name="bln"> <option>Pilih Bulan...</option>
+					<option value="01">Januari</option>
+					<option value="02">Februari</option>
+					<option value="03">Maret</option>
+					<option value="04">April</option>
+					<option value="05">Mei</option>
+					<option value="06">Juni</option>
+					<option value="07">Juli</option>
+					<option value="08">Agustus</option>
+					<option value="09">September</option>
+					<option value="10">Oktober</option>
+					<option value="11">November</option>
+					<option value="12">Desember</option>
+				</select>
+				<input type="submit" value="Cetak">
+			</form>
+			<br>
 			<a href="tambah_barang_keluar.php">Tambah</a>
 			<br/>
 			<br/>
 			<table>
 				<tr>
+					<td><b>Tanggal Keluar</td>
 					<td><b>Id Barang</td>
-					<td><b>Tanggal keluar</td>
 					<td><b>Nama Barang</td>
 					<td><b>Jumlah Barang</td>
 					<td><b>Harga Satuan</td>
@@ -65,8 +89,8 @@
 							<td><?php echo $var['jumlah_barang'] ?></td>
 							<td><?php echo $var['harga_barang'] ?></td>
 							<td><?php echo $var['total_harga'] ?></td>
-							<td><center><a href="delete_barang_keluar.php?kode=<?php echo $var['tanggal_keluar'] ?>&kode2=<?php echo $var['nama_barang']?>">Delete</a></td>
-							<td><center><a href="edit_barang_keluar.php?kode=<?php echo $var['id_barang'] ?> &kode2=<?php echo $var['tanggal_keluar'] ?>">Edit</a></td>
+							<td><center><a href="delete_barang_keluar.php?kode=<?php echo $var['no_barang_keluar'] ?>">Delete</a></td>
+							<td><center><a href="edit_barang_keluar.php?kode=<?php echo $var['no_barang_keluar'] ?>">Edit</a></td>
 						</tr>
 				<?php	}
 				?>

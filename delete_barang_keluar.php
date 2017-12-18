@@ -4,6 +4,6 @@
 	$tanggal = $_GET['kode'];
 	$nama = $_GET['kode2'];
 	
-	mysql_query("delete from barangkeluar where tanggal_keluar='$tanggal' and nama_barang='$nama'");
+	mysql_query("delete from barangkeluar where no_barang_keluar='$nama'");
 	header('location:keluar_gudang_barang.php');
 ?>

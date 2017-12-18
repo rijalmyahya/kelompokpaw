@@ -1,5 +1,5 @@
 <?php 
-if(!isset($_SESSION['username'])){
-	header("location:hal_login.php?pesan=blm");
+if(!isset($_SESSION['id_admin'])){
+	header("location:login_adm.php?pesan=blm");
 }
 ?>

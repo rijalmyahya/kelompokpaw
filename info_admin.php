@@ -3,6 +3,7 @@
 <?php
 	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">		
+				<img src="logo.png">		
 			</div>
 			<!-- end logo-->
 			<h1 class="title">Sistem Pengelolaan Super Market</h1>
@@ -41,7 +42,7 @@
 
 		<!-- menu -->
 		<div class="contain">
-			<a href="data_pegawai.php">Data Diri</a>
+			<a href="data_pegawai_admin.php">Data Diri</a>
 			<a href="ganti_password_admin.php">Ganti pass</a>
 		</div>
 		<!-- menu -->

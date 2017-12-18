@@ -1,7 +1,9 @@
 <html>
 <head>
 <?php
+	session_start();
 	include 'koneksi.php';
+	include 'cek.php';
 ?>
 <title>Sistem Pengelolaan Super Market</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,7 +14,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1>Sistem Pengelolaan Super Market</h1>
@@ -64,13 +66,19 @@
 							<tr>
 								<td align="left" align="center">username</td>
 								<td align="right">
-									<input type="text" name="id" placeholder="k124" size="20">
+									<input type="text" name="id" placeholder="username" size="20">
+								</td>
+							</tr>
+							<tr>
+								<td align="left" align="center">Nama</td>
+								<td align="right">
+									<input type="text" name="nama" placeholder="nama" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td align="left" align="center">password</td>
 								<td align="right">
-									<input type="text" name="pass" placeholder="karung" size="20">
+									<input type="password" name="pass" placeholder="password" size="20">
 								</td>
 							</tr>
 							<tr>

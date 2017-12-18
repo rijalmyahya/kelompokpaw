@@ -13,7 +13,7 @@
 		<header>
 			<!-- logo-->
 			<div id="logo">
-				<img src="logo.jpg">
+				<img src="logo.png">
 			</div>
 			<!-- end logo-->
 			<h1 class="title">Sistem Pengelolaan Super Market</h1>
@@ -41,7 +41,13 @@
 
 		<!-- menu -->
 		<div class="contain">
-			
+			<h4>PT. Super GAPENSA</h4>
+			<p>
+				PT. Super GAPENSA didirikan di Garut, 7 Oktober 2002. PT. Super GAPENSA adalah suatu perusahan grocery yang bergerak dalam bisnis produk harian. Misalnya produk seperti mie, cemilan, dan hal lainnya. Pada awalnya PT. Super GAPENSA hanya grocery kecil yang menjual produk jumlah yang cukup kecil, walaupun sudah ada pada batas seper market pada umumnya. 
+			</p>
+			<p>
+				Sekarang, dengan berkembangnya perusahaan dan bertambahnya jumlah pelanggan. PT. Super GAPENSA juga terus memperbaharui teknologi dengan membangun Sistem Pengelolaan Super Market. Hal itu digunakan agar pencatatan lebih mudah. Sehingga saat ini pengeluaran dan pemasukan lebih terkendali. Serta perusahaan dapat memperbaharui data secara real-time.
+			</p>
 		</div>
 		<!-- menu -->
 
