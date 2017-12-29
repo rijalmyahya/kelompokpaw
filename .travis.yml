@@ -4,4 +4,5 @@ php:
 
 before_install: composer install
 script:
+  - phpunit --configuration $DB.phpunit.xml
   - phpunit testfungsi_fungsi.php
