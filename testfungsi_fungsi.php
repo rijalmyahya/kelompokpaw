@@ -3,7 +3,7 @@
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	/*function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
+	function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
 		$cek = mysql_query("select * from barang where id_barang='$id'");
 
 		if(mysql_num_rows($cek)==1){
@@ -26,7 +26,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		mysql_query("delete from barang where id_barang='$idbarang1'");
 		header('location:gudang_barang.php');
 	}
-*/
+
 	function testtampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
