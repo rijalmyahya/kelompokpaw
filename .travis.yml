@@ -7,7 +7,7 @@ before_script:
   - composer install --prefer-source --no-interaction --dev
 
 script:
-  - phpunit --verbose testfungsi_fungsi.php
+  - phpunit testfungsi_fungsi.php
   dist: trusty
 
 matrix:
