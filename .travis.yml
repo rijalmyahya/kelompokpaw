@@ -4,5 +4,5 @@ php:
 
 before_install: composer install
 script:
-  vendor/bin/phpunit 
-  phpunit testfungsi_fungsi.php
+  - vendor/bin/phpunit 
+  - phpunit testfungsi_fungsi.php
