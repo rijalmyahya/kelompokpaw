@@ -3,7 +3,7 @@ php:
   - '5.6'
 
 script:
-  - phpunit --verbose testfungsi_fungsi.php
+  - phpunit testfungsi_fungsi.php
   dist: trusty
 
 matrix:
