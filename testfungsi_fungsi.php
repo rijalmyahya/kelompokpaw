@@ -1,5 +1,5 @@
 <?php
-	require_once "PHPUnit/Framework/TestCase.php";
+	//require_once "PHPUnit/Framework/TestCase.php";
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{

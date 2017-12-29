@@ -2,7 +2,15 @@ language: php
 php:
   - '5.6'
 
-before_install: composer install
-before_script: allow failure
+before_script:
+  - composer self-update --rollback
+  - composer install --prefer-source --no-interaction --dev
+
 script:
-  - phpunit testfungsi_fungsi.php
+  - phpunit --verbose testfungsi_fungsi.php
+  dist: trusty
+
+matrix:
+  allow_failures:
+    - php: 5.6
+  fast_finish: true
