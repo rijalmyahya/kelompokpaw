@@ -3,9 +3,7 @@
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	
-	bool $tambah;
-	bool $delete;
+	/*
 	public function addtambah_barang()
     {
     	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000,true);
@@ -42,7 +40,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		$delete =true;
 		$this->assertEquals($extends);
 	}
-
+*/
 	function testtampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
