@@ -1,7 +1,7 @@
 <?php
 	//require_once "PHPUnit/Framework/TestCase.php";
 	include "koneksi.php";
-
+	require 'fungsi_fungsi.php'
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	/*function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
 		$cek = mysql_query("select * from barang where id_barang='$id'");
@@ -27,6 +27,22 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		header('location:gudang_barang.php');
 	}
 */
+	private $fungsi;
+ 
+    protected function setUp()
+    {
+        $this->fungsi = new fungsi_fungsi();
+    }
+ 
+    protected function tearDown()
+    {
+        $this->fungsi = NULL;
+    }
+
+    public public function testtambah_barang()
+    {
+    	$this->fungsi->tambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
+    }
 	function testtampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
