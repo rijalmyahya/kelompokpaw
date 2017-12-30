@@ -3,11 +3,13 @@
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	public public function testtambah_barang()
+	
+	public public function addtambah_barang()
     {
-    	$this->tambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
+    	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
     }
-	function tambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
+	
+	function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
 		$cek = mysql_query("select * from barang where id_barang='$id'");
 
 		if(mysql_num_rows($cek)==1){
