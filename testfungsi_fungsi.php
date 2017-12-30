@@ -4,7 +4,7 @@
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	
-	public public function addtambah_barang()
+	public function addtambah_barang()
     {
     	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
     }
