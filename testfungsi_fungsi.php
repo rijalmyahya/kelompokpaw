@@ -8,6 +8,10 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
     {
     	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
     }
+
+    public function adddelete_barang(){
+    	$this->testdelete_barang("k1");
+    }
 	
 	function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
 		$cek = mysql_query("select * from barang where id_barang='$id'");
@@ -26,13 +30,13 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 			}
 		}	
 	}
-/*
+
 	function testdelete_barang($idbarang){
 		$idbarang1 = $idbarang;
 		mysql_query("delete from barang where id_barang='$idbarang1'");
 		header('location:gudang_barang.php');
 	}
-*/
+
 	function testtampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
