@@ -1,4 +1,4 @@
 <?php 
-mysqli_connect("localhost","root","");
-mysqli_select_db("market");
+mysql_connect("localhost","root","");
+mysql_select_db("market");
 ?>
