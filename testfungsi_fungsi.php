@@ -4,8 +4,8 @@
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	
-	bool $tambah = false;
-	bool $delete = false;
+	bool $tambah;
+	bool $delete;
 	public function addtambah_barang()
     {
     	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000,true);
