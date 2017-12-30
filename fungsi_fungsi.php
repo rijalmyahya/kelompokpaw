@@ -1,6 +1,6 @@
 <?php
 	include "koneksi.php";
-class fungsi_fungsi{
+
 	function tambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
 		$cek = mysql_query("select * from barang where id_barang='$id'");
 
@@ -28,5 +28,4 @@ class fungsi_fungsi{
 	function tampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
-
 ?>
