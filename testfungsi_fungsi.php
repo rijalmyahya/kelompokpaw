@@ -1,9 +1,13 @@
 <?php
 	//require_once "PHPUnit/Framework/TestCase.php";
 	include "koneksi.php";
-	require 'fungsi_fungsi.php'
+
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	/*function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
+	public public function testtambah_barang()
+    {
+    	$this->tambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
+    }
+	function tambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
 		$cek = mysql_query("select * from barang where id_barang='$id'");
 
 		if(mysql_num_rows($cek)==1){
@@ -20,29 +24,13 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 			}
 		}	
 	}
-
+/*
 	function testdelete_barang($idbarang){
 		$idbarang1 = $idbarang;
 		mysql_query("delete from barang where id_barang='$idbarang1'");
 		header('location:gudang_barang.php');
 	}
 */
-	private $fungsi;
- 
-    protected function setUp()
-    {
-        $this->fungsi = new fungsi_fungsi();
-    }
- 
-    protected function tearDown()
-    {
-        $this->fungsi = NULL;
-    }
-
-    public public function testtambah_barang()
-    {
-    	$this->fungsi->tambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
-    }
 	function testtampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
