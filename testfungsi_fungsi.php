@@ -3,7 +3,7 @@
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	
+	/*
 	private $tambah = false;
 	private $delete = false;
 	public function addtambah_barang()
@@ -42,7 +42,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		$this->delete =true;
 		$this->assertEquals($this->delete);
 	}
-
+*/
 	function testtampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
