@@ -3,17 +3,19 @@
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	/*
+	
+	private $tambah = false;
+	private $delete = false;
 	public function addtambah_barang()
     {
-    	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000,true);
+    	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
     }
 
     public function adddelete_barang(){
-    	$this->testdelete_barang("k1",true);
+    	$this->testdelete_barang("k1");
     }
 	
-	function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total,$extends){
+	function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
 		$cek = mysql_query("select * from barang where id_barang='$id'");
 
 		if(mysql_num_rows($cek)==1){
@@ -27,20 +29,20 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 				mysql_query("insert into barangmasuk(tanggal_masuk,id_barang,nama_barang,jumlah_barang,harga_barang,total_harga)
 				values('$tanggal','$id','$nama','$jumlah','$harga','$total')") or die(mysql_error());
 				header('location:gudang_barang.php');
-				$tambah =true;
+				$this->tambah =true;
 			}
 		}
-		$this->assertEquals($extends);	
+		$this->assertEquals($this->tambah);	
 	}
 
-	function testdelete_barang($idbarang,$extends){
+	function testdelete_barang($idbarang){
 		$idbarang1 = $idbarang;
 		mysql_query("delete from barang where id_barang='$idbarang1'");
 		header('location:gudang_barang.php');
-		$delete =true;
-		$this->assertEquals($extends);
+		$this->delete =true;
+		$this->assertEquals($this->delete);
 	}
-*/
+
 	function testtampil(){
 		return mysql_query("select * from barang order by id_barang");
 	}	
