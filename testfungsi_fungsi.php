@@ -27,16 +27,16 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		
 		$content = $test_user;
 		$this->assertEquals('admin',$content);
-	}
+	}*/
 
 	function testPassword3(){
 		$login = mysql_query("select * from admin where id_admin ='admin'");
-		$user = mysql_fetch_array($login);
+		$user = mysql_num_rows($login);
 		$test_user = $user['id_admin'];
 		
 		$content = $test_user;
 		$this->assertNotEquals('apaitu',$content);
-	}*/
+	}
 
  	function testtampil(){
  		return mysql_query("select * from barang order by id_barang");
