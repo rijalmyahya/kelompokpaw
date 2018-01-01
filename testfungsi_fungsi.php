@@ -3,7 +3,8 @@
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	function testUsername(){
-		$login = mysql_query("select * from admin where pass_admin ='admin'");
+		$query = "select * from admin where pass_admin ='admin'";
+		$login = mysql_query($query);
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
 		
@@ -11,7 +12,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		$this->assertEquals('admin',$content);
 	}
 
-	function testUsername2(){
+	/*function testUsername2(){
 		$login = mysql_query("select * from admin where pass_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
@@ -36,7 +37,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		
 		$content = $test_user;
 		$this->assertNotEquals('apaitu',$content);
-	}
+	}*/
 
  	function testtampil(){
  		return mysql_query("select * from barang order by id_barang");
