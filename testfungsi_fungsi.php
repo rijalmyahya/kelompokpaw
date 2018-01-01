@@ -41,9 +41,5 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
  	function testtampil(){
  		return mysql_query("select * from barang order by id_barang");
  	}
-
- 	function testtampil2(){
- 		return mysql_query("select * from admin order by id_admin");
- 	}
 }
 ?>
