@@ -27,7 +27,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		
 		$content = $test_user;
 		$this->assertEquals('admin',$content);
-	}
+	}*/
 
 	function testPassword2(){
 		$login = mysql_query("SELECT * FROM admin WHERE id_admin ='admin'");
@@ -36,10 +36,10 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		
 		$content = $test_user;
 		$this->assertNotEquals('apaitu',$content);
-	}*/
+	}
 
- 	function testtampil(){
+ 	/*function testtampil(){
  		return mysql_query("select * from barang order by id_barang");
- 	}
+ 	}*/
 }
 ?>
