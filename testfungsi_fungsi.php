@@ -3,7 +3,7 @@
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	function testUsername(){
-		$login = mysql_query("SELECT * FROM admin WHERE pass_admin ='admin'");
+		$login = mysql_query("select * from admin where pass_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
 		
@@ -12,7 +12,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	}
 
 	function testUsername2(){
-		$login = mysql_query("SELECT * FROM admin WHERE pass_admin ='admin'");
+		$login = mysql_query("select * from admin where pass_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
 		
@@ -21,7 +21,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	}
 
 	function testPassword(){
-		$login = mysql_query("SELECT * FROM admin WHERE id_admin ='admin'");
+		$login = mysql_query("select * from admin where id_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
 		
@@ -30,7 +30,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	}
 
 	function testPassword3(){
-		$login = mysql_query("SELECT * FROM admin WHERE id_admin ='admin'");
+		$login = mysql_query("select * from admin where id_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
 		
@@ -40,6 +40,10 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 
  	function testtampil(){
  		return mysql_query("select * from barang order by id_barang");
+ 	}
+
+ 	function testtampil2(){
+ 		return mysql_query("select * from admin order by id_admin");
  	}
 }
 ?>
