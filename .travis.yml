@@ -4,7 +4,6 @@ php:
 services: mysql
 before_install: composer install
 before_script:
-  - mysql -u root 'CREATE DATABASE market;'
   - mysql -u root market < market.sql
 script:
   - phpunit testfungsi_fungsi.php
