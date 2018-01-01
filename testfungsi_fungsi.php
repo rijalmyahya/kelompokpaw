@@ -29,7 +29,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		$this->assertEquals('admin',$content);
 	}*/
 
-	function testPassword2(){
+	function testPassword3(){
 		$login = mysql_query("SELECT * FROM admin WHERE id_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
