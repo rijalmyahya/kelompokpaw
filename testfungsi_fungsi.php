@@ -2,7 +2,7 @@
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	/*function testUsername(){
+	function testUsername(){
 		$login = mysql_query("SELECT * FROM admin WHERE pass_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
@@ -36,7 +36,7 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		
 		$content = $test_user;
 		$this->assertNotEquals('apaitu',$content);
-	}*/
+	}
 
  	function testtampil(){
  		return mysql_query("select * from barang order by id_barang");
