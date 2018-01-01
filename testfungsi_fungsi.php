@@ -1,50 +1,42 @@
 <?php
-	//require_once "PHPUnit/Framework/TestCase.php";
+	require_once "PHPUnit/Framework/TestCase.php";
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	/*
-	private $tambah = false;
-	private $delete = false;
-	public function addtambah_barang()
-    {
-    	$this->testtambah_barang("k1", "barang", 10, 500, "10/12/2017", 5000);
-    }
-
-    public function adddelete_barang(){
-    	$this->testdelete_barang("k1");
-    }
-	
-	function testtambah_barang($id,$nama,$jumlah,$harga,$tanggal,$total){
-		$cek = mysql_query("select * from barang where id_barang='$id'");
-
-		if(mysql_num_rows($cek)==1){
-			header("location:tambah_barang.php?pesan=ada");
-		}else{
-			if(empty($id) || empty($nama) || empty($harga)  || empty($jumlah) || empty($tanggal)) {
-				header("location:tambah_barang.php?pesan=kurang");
-			}else{
-				mysql_query("insert into barang(id_barang,nama_barang,jumlah_barang,harga_barang)
-				values('$id','$nama','$jumlah','$harga')") or die(mysql_error());
-				mysql_query("insert into barangmasuk(tanggal_masuk,id_barang,nama_barang,jumlah_barang,harga_barang,total_harga)
-				values('$tanggal','$id','$nama','$jumlah','$harga','$total')") or die(mysql_error());
-				header('location:gudang_barang.php');
-				$this->tambah =true;
-			}
-		}
-		$this->assertEquals($this->tambah);	
+	function testUsername(){
+		$login = mysql_query("SELECT * FROM admin WHERE pass_admin ='admin'");
+		$user = mysql_fetch_array($login);
+		$test_user = $user['id_admin'];
+		
+		$content = $test_user;
+		$this->assertEquals('admin',$content);
 	}
 
-	function testdelete_barang($idbarang){
-		$idbarang1 = $idbarang;
-		mysql_query("delete from barang where id_barang='$idbarang1'");
-		header('location:gudang_barang.php');
-		$this->delete =true;
-		$this->assertEquals($this->delete);
+	function testUsername2(){
+		$login = mysql_query("SELECT * FROM admin WHERE pass_admin ='admin'");
+		$user = mysql_fetch_array($login);
+		$test_user = $user['id_admin'];
+		
+		$content = $test_user;
+		$this->assertNotEquals('apa',$content);
 	}
-*/
-	function testtampil(){
-		return mysql_query("select * from barang order by id_barang");
-	}	
+
+	function testPassword(){
+		$login = mysql_query("SELECT * FROM admin WHERE id_admin ='admin'");
+		$user = mysql_fetch_array($login);
+		$test_user = $user['id_admin'];
+		
+		$content = $test_user;
+		$this->assertEquals('admin',$content);
+	}
+
+	function testPassword2(){
+		$login = mysql_query("SELECT * FROM admin WHERE id_admin ='admin'");
+		$user = mysql_fetch_array($login);
+		$test_user = $user['id_admin'];
+		
+		$content = $test_user;
+		$this->assertNotEquals('apaitu',$content);
+	}
 }
 ?>
