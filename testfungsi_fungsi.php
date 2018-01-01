@@ -2,14 +2,14 @@
 	include "koneksi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
-	/*function testUsername(){
+	function testUsername(){
 		$login = mysql_query("select * from admin where pass_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
 		
 		$content = $test_user;
 		$this->assertEquals('admin',$content);
-	}*/
+	}
 
 	function testUsername2(){
 		$login = mysql_query("select * from admin where pass_admin ='admin'");
@@ -20,14 +20,14 @@ class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 		$this->assertNotEquals('apa',$content);
 	}
 
-	/*function testPassword(){
+	function testPassword(){
 		$login = mysql_query("select * from admin where id_admin ='admin'");
 		$user = mysql_fetch_array($login);
 		$test_user = $user['id_admin'];
 		
 		$content = $test_user;
 		$this->assertEquals('admin',$content);
-	}*/
+	}
 
 	function testPassword3(){
 		$login = mysql_query("select * from admin where id_admin ='admin'");
