@@ -2,9 +2,6 @@
 				ob_start();
 				include "koneksi.php";
 
-							date_default_timezone_set('Asia/Jakarta');
-							$dmy = date('Ymd');
-							$time1 = date('H:i:s');
 							$barcode    =$_POST['barcode'];
 							$jumlah		=$_POST['jumlah_barang'] ;
 							
@@ -19,8 +16,8 @@
 									$jumlah_awal	= $select_result4 ['jumlah_barang'];
 
 									$query_insert = "insert into temp 
-									(id_barang,nama_barang,harga_barang,jumlah_barang,kasir,tgl,waktu) 
-									values ('$id','$nama','$harga','$jumlah','$kasir','$dmy','$time1')";
+									(id_barang,nama_barang,harga_barang,jumlah_barang,kasir) 
+									values ('$id','$nama','$harga','$jumlah','$kasir')";
 									
 									$query_update = "UPDATE temp SET sub_total = harga_barang * jumlah_barang WHERE nama_barang='$nama' and jumlah_barang='$jumlah'";
 									$insert = mysql_query($query_insert);
