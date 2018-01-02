@@ -59,8 +59,8 @@
 			<h1>Transaksi Penjualan</h1>
 			<a href='daftar_barang.php' target='_blank'>Cari barang</a><br/><br/>
 			<form action="proses_masuk_keranjang.php" method="post">
-						 <input type="text"  name="jumlah_barang"  placeholder="Jumlah Barang" required />	
-						 <input type="text" name="barcode"  placeholder="Id Barang" required />	
+						 <input type="text"  name="jumlah_barang"  placeholder="Jumlah Barang" />	
+						 <input type="text" name="barcode"  placeholder="Id Barang"/>	
 					     <input type="Submit" value="<<< TAMBAHKAN">
 				<div class="clear"></div>	
 			</form>
