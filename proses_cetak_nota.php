@@ -1,5 +1,5 @@
 <?php
-require('C:xampp/htdocs/kelompokpaw_v2/phpfpdf/fpdf.php');
+require("phpfpdf/fpdf.php");
 include 'koneksi.php';
 $bayar 		= $_POST['bayar'];
 $hargat		= $_POST['subtotal'];
@@ -20,8 +20,6 @@ while ($var2 = mysql_fetch_array($select2)) {
 		$query_update=mysql_query("update barang set jumlah_barang='$sisa' where id_barang='$id2' or nama_barang='$nama2'");
 	}
 }
-
-$query_hapus_temp=mysql_query("delete from temp ") or die(mysql_error());
 
 $pdf = new FPDF('l','mm','A4');
 $pdf->Addpage();
@@ -53,5 +51,8 @@ $pdf->Cell(20,6,'Uang Yang Di Bayar :' .$bayar,0,1);
 $pdf->Cell(20,6,'Uang Kembalian     :' .$kembali,0,1);
 
 $pdf->Output("cetak_nota.pdf","I");
+
+//$query_hapus_temp=mysql_query("delete from temp ") or die(mysql_error());
+
 echo "<meta http-equiv='refresh' content='1 url=kasir1.php'>";
 ?>
