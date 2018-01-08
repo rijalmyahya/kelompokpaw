@@ -4,5 +4,5 @@
 	$id = $_GET['kode'];
 	
 	mysql_query("delete from logjual where no_logjual='$id'");
-	header('location:history_jual.php');
+	header('location:history_penjualan.php');
 ?>
