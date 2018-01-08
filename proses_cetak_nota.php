@@ -26,7 +26,6 @@ while ($var2 = mysql_fetch_array($select2)) {
 		$query_update=mysql_query("update barang set jumlah_barang='$sisa' where id_barang='$id2' or nama_barang='$nama2'");
 	}
 	$query_update_logjual= mysql_query("insert into logjual(id_barang, nama_barang, harga_barang, jumlah_barang, total_harga, id_kasir, tanggal) values ('$id','$nama','$harga','$jumlah','$sub_total','$kasir','$tgl')");	
-
 }
 
 	

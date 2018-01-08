@@ -5,4 +5,5 @@
 	
 	mysql_query("delete from logjual where no_logjual='$id'");
 	header('location:history_penjualan.php');
+//coba
 ?>
