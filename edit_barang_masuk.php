@@ -66,6 +66,7 @@
 					$tampil = "SELECT * FROM barangmasuk WHERE no_barang_masuk='$id'";
 					$query = mysql_query($tampil);
 					$data = mysql_fetch_array($query);
+					$no = $data['no_barang_masuk'];
 					$tanggal = $data['tanggal_masuk'];
 					$id = $data['id_barang'];
 					$nama = $data['nama_barang'];
@@ -76,6 +77,7 @@
 					<div class="kotaklogb">
 						<table border="0">
 							<form action="proses_edit_barang_masuk.php" method="post">
+							<input type="hidden" name="no" value="<?php echo $no; ?>">
 							<tr>
 								<td align="left" align="center">Tanggal Masuk</td>
 								<td align="right">

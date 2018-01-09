@@ -1,6 +1,7 @@
 <?php ob_start();
 include "koneksi.php";
 
+$no		= $_POST['no'];
 $id   	= $_POST['id'];
 $nama   = $_POST['nama'];
 $harga  = $_POST['harga'];
@@ -8,7 +9,7 @@ $jumlah = $_POST['jumlah'];
 $tanggal = $_POST['tanggal'];
 $total = $jumlah*$harga;
 	
-$dt=mysql_query("select * from barangmasuk where nama_barang='$nama' and tanggal_masuk='$tanggal'");
+$dt=mysql_query("select * from barangmasuk where no_barang_masuk='$no'");
 $data=mysql_fetch_array($dt);
 $awal = $data['jumlah_barang'];
 
@@ -23,7 +24,7 @@ if($awal>$jumlah){
 		header("location:masuk_gudang_barang.php?pesan=min");
 	}
 	else{
-		mysql_query("update barangmasuk set tanggal_masuk='$tanggal', id_barang='$id', nama_barang='$nama', jumlah_barang='$jumlah', harga_barang='$harga', total_harga='$total' where id_barang='$id' and tanggal_masuk = '$tanggal'") or die(mysql_error());
+		mysql_query("update barangmasuk set tanggal_masuk='$tanggal', id_barang='$id', nama_barang='$nama', jumlah_barang='$jumlah', harga_barang='$harga', total_harga='$total' where no_barang_masuk='$no'") or die(mysql_error());
 		mysql_query("update barang set jumlah_barang='$final' where id_barang='$id'");
 		header('location:masuk_gudang_barang.php');
 	}
@@ -31,7 +32,7 @@ if($awal>$jumlah){
 else{
 	$sisa = $jumlah-$awal;
 	$final = $awal2+$sisa;
-	mysql_query("update barangmasuk set tanggal_masuk='$tanggal', id_barang='$id', nama_barang='$nama', jumlah_barang='$jumlah', harga_barang='$harga', total_harga='$total' where id_barang='$id' and tanggal_masuk = '$tanggal'") or die(mysql_error());
+	mysql_query("update barangmasuk set tanggal_masuk='$tanggal', id_barang='$id', nama_barang='$nama', jumlah_barang='$jumlah', harga_barang='$harga', total_harga='$total' where no_barang_masuk='$no'") or die(mysql_error());
 	mysql_query("update barang set jumlah_barang='$final' where id_barang='$id'");
 	header('location:masuk_gudang_barang.php');
 }

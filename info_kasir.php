@@ -42,7 +42,7 @@
 
 		<!-- menu -->
 		<div class="contain">
-			<a href="data_pegawai.php">Data Diri</a>
+			<a href="data_pegawai_kasir.php">Data Diri</a>
 			<a href="ganti_password_kasir.php">Ganti pass</a>
 		</div>
 		<!-- menu -->

@@ -47,7 +47,7 @@
 						<b>Edit Data pegawai</b> 
 					</div>
 					<?php
-					$pegawai = $_SESSION['id_admin'];
+					$pegawai = $_SESSION['id_kasir'];
 					
 					$tampil = "SELECT * FROM pegawai WHERE id_pegawai='$pegawai'";
 					$query = mysql_query($tampil);

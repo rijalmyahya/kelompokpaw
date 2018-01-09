@@ -25,18 +25,18 @@
 					<li><a href="info_admin.php">Kembali</a></li>
 					<li>|</li>
 					<li><a href="logout.php">Logout</a></li>
-					<li>|</li>
+					<li></li>
 					<li>
 						<?php 
 						include 'koneksi.php';
 						if(isset($_GET['pesan'])){
 							$pesan = mysql_real_escape_string($_GET['pesan']);
 								if($pesan=="gagal"){
-									echo "Password gagal di ganti !! Periksa Kembali Password yang anda masukkan !!";
+									echo "| Password gagal di ganti !! Periksa Kembali Password yang anda masukkan !!";
 								}else if($pesan=="tdksama"){
-									echo "Password yang anda masukkan tidak sesuai  !! silahkan ulangi !!";
+									echo "| Password yang anda masukkan tidak sesuai  !! silahkan ulangi !!";
 								}else if($pesan=="oke"){
-									echo "Password berhasil diganti !!";
+									echo "| Password berhasil diganti !!";
 								}
 						}
 						?>

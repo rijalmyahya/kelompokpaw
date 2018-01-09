@@ -25,7 +25,25 @@
 		header('location:gudang_barang.php');
 	}
 
+	/*function tampil(){
+		$query = mysql_query("select * from barang order by id_barang");
+ 		if($query==true){
+ 			return $query;
+ 		}
+ 		else{
+ 			$message = "kesalahan";
+ 			return $message;
+ 		}
+	}*/
+
 	function tampil(){
-		return mysql_query("select * from barang order by id_barang");
-	}	
+		$query = mysql_query("select * from barang order by id_barang");
+ 		if($query==true){
+ 			return $query;
+ 		}
+ 		else{
+ 			$message = "kesalahan";
+ 			return $message;
+ 		}
+	}		
 ?>

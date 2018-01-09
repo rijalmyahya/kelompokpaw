@@ -47,7 +47,7 @@
 					<input type="text" placeholder="Nama" name="namabarang">
 			 	</h4>
 			</form>
-			<p><b>History Login</b></p>
+			<p><b>History Penjualan</b></p>
 			<table>
 			<?php
 				if(isset($_GET['cari'])){

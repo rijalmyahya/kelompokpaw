@@ -4,6 +4,8 @@ require("phpfpdf/fpdf.php");
 include 'koneksi.php';
 date_default_timezone_set('Asia/Jakarta');
 
+$kasir = $_SESSION['id_kasir'];
+
 $bayar 		= $_POST['bayar'];
 $hargat		= $_POST['subtotal'];
 $kembali	= $_POST['kembali'];
@@ -29,15 +31,28 @@ while ($var2 = mysql_fetch_array($select2)) {
 }
 
 	
-$pdf = new FPDF('l','mm','A4');
-$pdf->Addpage();
-$pdf->SetFont('Arial','B','16');
-$pdf->Cell(190,7,'Sistem Pengelolaan Supermarket',0,1,'C');
-$pdf->SetFont('Arial','B','14');
-$pdf->Cell(190,7,'Nota Pembelian',0,1,'C');
-
-$pdf->Cell(10,7,'',0,1);
-
+$pdf = new FPDF('l','mm','A5');
+$pdf->SetMargins(10,5,5);
+$pdf->AliasNbPages();
+$pdf->AddPage();
+$pdf->SetFont('Times','B',16);
+$pdf->SetX(4);
+$pdf->MultiCell(205,7,'PT. SUPER GAPENSA',0,'C');
+$pdf->SetX(4);
+$pdf->MultiCell(205,7,'JL. MAWAR NO. 05 GARUT',0,'C');
+$pdf->SetX(4);
+$pdf->Line(5,20,203,20);
+$pdf->SetLineWidth(0.5);      
+$pdf->Line(5,20,203,20);   
+$pdf->SetLineWidth(0);
+$pdf->ln(1);
+$pdf->SetFont('Arial','B',14);
+$pdf->Cell(195,13,"Nota Penjualan",0,100,'C');
+$pdf->SetFont('Arial','B','9');
+$pdf->Cell(29.5,7,"Di cetak oleh : ".$kasir,0,0,'C');
+$pdf->ln(5);
+$pdf->Cell(50,7,"Pada tanggal : ".date("D - d/m/Y"),0,0,'C');
+$pdf->ln(8);
 $pdf->SetFont('Arial','B','12');
 
 $pdf->Cell(20,6,'No',1,0);
@@ -55,9 +70,10 @@ while ($row = mysql_fetch_array($nota)){
     $pdf->Cell(25,6,$row['sub_total'],1,1); 
     $no++;
 }
-$pdf->Cell(20,6,'Total Harga        :' .$hargat,0,1);
-$pdf->Cell(20,6,'Uang Yang Di Bayar :' .$bayar,0,1);
-$pdf->Cell(20,6,'Uang Kembalian     :' .$kembali,0,1);
+$pdf->ln(1);
+$pdf->Cell(20,7,'Total Harga               : '.$hargat,0,1);
+$pdf->Cell(20,7,'Uang Yang Di Bayar : '.$bayar,0,1);
+$pdf->Cell(20,7,'Uang Kembalian       : '.$kembali,0,1);
 
 $pdf->Output("cetak_nota.pdf","I");
 

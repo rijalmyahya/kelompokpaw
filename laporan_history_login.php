@@ -20,7 +20,7 @@ $pdf->Line(1,3.2,28.5,3.2);
 $pdf->SetLineWidth(0);
 $pdf->ln(1);
 $pdf->SetFont('Arial','B',14);
-$pdf->Cell(25.5,0.7,"Laporan Data Barang Masuk",0,10,'C');
+$pdf->Cell(25.5,0.7,"Laporan History Login",0,10,'C');
 $pdf->ln(1);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(5,0.7,"Periode : ".$_GET['bln'],0,0,'L');

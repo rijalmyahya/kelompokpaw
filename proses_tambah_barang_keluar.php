@@ -9,7 +9,7 @@ $tanggal = $_POST['tanggal'];
 
 $dt=mysql_query("select * from barang where nama_barang='$nama'");
 $data=mysql_fetch_array($dt);
-$sisa = $data['jumlah_barang']+$jumlah;
+$sisa = $data['jumlah_barang']-$jumlah;
 $total = $jumlah*$harga;
 	
 	if(empty($id) || empty($nama) || empty($harga)  || empty($jumlah) || empty($tanggal)){

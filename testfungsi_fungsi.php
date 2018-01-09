@@ -1,5 +1,6 @@
 <?php
 	include "koneksi.php";
+	include "fungsi_fungsi.php";
 
 class testfungsi_fungsi extends PHPUnit_Framework_TestCase{
 	/*function testUsername(){

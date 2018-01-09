@@ -3,8 +3,8 @@ session_start();
 include 'koneksi.php';
 date_default_timezone_set('Asia/Jakarta');
 
-$username = $_POST['idkasir'];
-$password = $_POST['passwordkasir'];
+$username = mysql_real_escape_string($_POST['idkasir']);
+$password = mysql_real_escape_string($_POST['passwordkasir']);
 $tanggal = date("Y-m-d H:i:s");
 
 $query = mysql_query("select * from kasir where id_kasir='$username' and pass_kasir='$password'") or die(mysql_error());

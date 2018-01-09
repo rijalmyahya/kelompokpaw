@@ -80,7 +80,7 @@
 							<tr>
 								<td align="left" align="center">Nama Admin</td>
 								<td align="right">
-									<input type="text" name="pass" placeholder="nama" value="<?php echo $nama;?>" size="20">
+									<input type="text" name="nama" placeholder="nama" value="<?php echo $nama;?>" size="20">
 								</td>
 							</tr>
 							<tr>

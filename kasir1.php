@@ -60,7 +60,15 @@
 			<a href='daftar_barang.php' target='_blank'>Cari barang</a><br/><br/>
 			<form action="proses_masuk_keranjang.php" method="post">
 						 <input type="text"  name="jumlah_barang"  placeholder="Jumlah Barang" />	
-						 <input type="text" name="barcode"  placeholder="Id Barang"/>	
+						 <select name="barcode"> <option>Pilih Nama Barang...</option> 
+					<?php 
+					$brg=mysql_query("select * from barang");
+					while($b=mysql_fetch_array($brg)){
+					?>	
+					<option value="<?php echo $b['nama_barang']; ?>"><?php echo $b['nama_barang'] ?></option>
+					<?php 
+					}
+					?> </select>	
 					     <input type="Submit" value="<<< TAMBAHKAN">
 				<div class="clear"></div>	
 			</form>

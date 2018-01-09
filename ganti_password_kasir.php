@@ -22,21 +22,21 @@
 			<!-- navbar-->
 			<nav>
 				<ul>
-					<li><a href="info_admin.php">Kembali</a></li>
+					<li><a href="info_kasir.php">Kembali</a></li>
 					<li>|</li>
 					<li><a href="logout.php">Logout</a></li>
-					<li>|</li>
+					<li></li>
 					<li>
 						<?php 
 						include 'koneksi.php';
 						if(isset($_GET['pesan'])){
 							$pesan = mysql_real_escape_string($_GET['pesan']);
 								if($pesan=="gagal"){
-									echo "Password gagal di ganti !! Periksa Kembali Password yang anda masukkan !!";
+									echo "| Password gagal di ganti !! Periksa Kembali Password yang anda masukkan !!";
 								}else if($pesan=="tdksama"){
-									echo "Password yang anda masukkan tidak sesuai  !! silahkan ulangi !!";
+									echo "| Password yang anda masukkan tidak sesuai  !! silahkan ulangi !!";
 								}else if($pesan=="oke"){
-									echo "Password berhasil diganti !!";
+									echo "| Password berhasil diganti !!";
 								}
 						}
 						?>
@@ -76,8 +76,8 @@
 					*/?>-->
 					<div class="kotaklogb">
 						<table border="0">
-							<form action="proses_ganti_password_admin.php" method="post">
-							<input name="user" type="hidden" value="<?php echo $_SESSION['id_admin']; ?>">
+							<form action="proses_ganti_password_kasir.php" method="post">
+							<input name="user" type="hidden" value="<?php echo $_SESSION['id_kasir']; ?>">
 							<tr>
 								<td align="left" align="center">Password lama</td>
 								<td align="right">
