@@ -45,5 +45,15 @@
  			$message = "kesalahan";
  			return $message;
  		}
+	}
+
+	public function totalharga($jumlah, $harga){
+		$total = $jumlah*$harga;
+		return $total;
+	}
+
+	public function sisabarangmasuk($jumlah1,$jumlah2){
+		$sisa = $jumlah1-$jumlah2;
+		return $sisa;
 	}		
 ?>

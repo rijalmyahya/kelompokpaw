@@ -1,5 +1,8 @@
 <?php ob_start();
 include "koneksi.php";
+include "fungsi_fungsi2.php";
+
+$this->fungsi = new fungsi_fungsi2(); 
 
 $nama   = $_POST['nama'];
 $harga  = $_POST['harga'];

@@ -1,24 +1,57 @@
- <?php
-	class UnitTesting{
-		public function select(){
-			include "koneksi.php";
-			$sql = "SELECT * FROM barang";
-			$query = mysql_query($sql);
-			if($query)
-				return true;
-			else
-				return false;
+<?php
+	require 'UnitTesting.php';
+	require_once 'PHPUnit/Framework/TestCase.php';
+	class UnitTesting extends PHPUnit_Framework_TestCase{
+		protected function setUp(){
+			$this->UnitTesting = new UnitTesting();
 		}
-		public function delete_data($id){
-		include ("koneksi.php");
-		$query = mysql_query("DELETE FROM barang WHERE id_barang = '$id'");
-			if($query){ //jika query berhasil
-				return true;
-				//echo "<script>alert('Data sudah dihapus'); window.location = 'riwayat-penggajian(admin).php'; </script>";
-			}else{ //jika query gagal
-				return false;
-				//echo "<script>alert('Data gagal dihapus'); window.location = 'riwayat-penggajian(admin).php'; </script>";
-			}
+		public function testGaji(){
+			$result = $this->UnitTesting->gaji(100000,5000,50000);
+			$this->assertEquals(55000,$result);
 		}
+		public function testGaji_total(){
+			$result = $this->UnitTesting->gaji_total(5000,50000,10000,10,10,10,2000,1000,1000);
+			$this->assertEquals(85000,$result);
+		}
+		
+		/*public function testUsername(){
+			include ("koneksi/connection.php");
+			$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
+			$user = mysqli_fetch_array($login);
+			$test_user = $user['username'];
+				
+			$content = $test_user;
+			$this->assertEquals('admin01',$content);
+		}
+			
+		public	function testUsernameFalse(){
+			include ("koneksi/connection.php");
+			$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
+			$user = mysqli_fetch_array($login);
+			$test_user = $user['username'];
+				
+			$content = $test_user;
+			$this->assertNotEquals('admin',$content);
+		}
+			
+		public function testPassword(){
+			include ("koneksi/connection.php");
+			$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = md5('adminsatu')");
+			$user = mysqli_fetch_array($login);
+			$test_user = $user['password'];
+				
+			$content = $test_user;
+			$this->assertEquals(md5('adminsatu'),$content);
+		}
+			
+		public	function testPasswordFalse(){
+			include ("koneksi/connection.php");
+			$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = 'adminsatu'");
+			$user = mysqli_fetch_array($login);
+			$test_user = $user['password'];
+				
+			$content = $test_user;
+			$this->assertNotEquals('admin',$content);
+		}*/
 	}
 ?>
